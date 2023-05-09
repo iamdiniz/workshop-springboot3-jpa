@@ -16,5 +16,8 @@
 
 - Verbos (utilize o postman)
  - converta o arquivo zip para ".json"
+ - OBS: Não tem como deletar um usuario que tem pedidos associados a ele,
+pq se não os pedidos ficarão sem cliente. Ia perder a integridade
+do banco de dados.
 
 [Pedidos.postman_collection.zip](https://github.com/Sxliduz/workshop-springboot3-jpa/files/11433965/Pedidos.postman_collection.zip)
