@@ -15,6 +15,11 @@
 
 
 - Verbos (utilize o postman)
+
+Exp:
+
+![Screenshot (23)](https://github.com/Sxliduz/workshop-springboot3-jpa/assets/72664530/e872f35b-ee25-4a65-921f-748c56151689)
+
  - converta o arquivo zip para ".json"
  - OBS: Não tem como deletar um usuario que tem pedidos associados a ele,
 pq se não os pedidos ficarão sem cliente. Ia perder a integridade
