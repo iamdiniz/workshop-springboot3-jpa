@@ -11,7 +11,8 @@
 - Banco em memoria h2:
  - Entre no h2 no seu navegador com o comando: localhost:8080/h2
  
- ![image](https://github.com/Sxliduz/workshop-springboot3-jpa/assets/72664530/3e732f1d-0360-4c95-9ac5-bce5bf29463b)
+ ![Screenshot (17)](https://github.com/Sxliduz/workshop-springboot3-jpa/assets/72664530/2f1f72be-0e83-4352-b9cf-cb3e4f299764)
+
 
 - Verbos (utilize o postman)
  - converta o arquivo zip para ".json"
