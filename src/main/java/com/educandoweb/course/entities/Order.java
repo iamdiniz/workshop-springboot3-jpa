@@ -22,7 +22,8 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_order")
-public class Order implements Serializable{
+public class Order implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -47,7 +48,7 @@ public class Order implements Serializable{
 	public Order() {
 	}
 
-	public Order(Long id, Instant moment,OrderStatus orderStatus, User client) {
+	public Order(Long id, Instant moment, OrderStatus orderStatus, User client) {
 		this.id = id;
 		this.moment = moment;
 		setOrderStatus(orderStatus);

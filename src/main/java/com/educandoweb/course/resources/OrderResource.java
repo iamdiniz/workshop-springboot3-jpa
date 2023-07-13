@@ -10,24 +10,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.educandoweb.course.entities.Order;
+import com.educandoweb.course.repositories.OrderRepository;
 import com.educandoweb.course.services.OrderService;
 
 @RestController
-@RequestMapping(value = "/orders")
+@RequestMapping("/orders")
 public class OrderResource {
 
 	@Autowired
 	private OrderService service;
 	
+	@Autowired
+	private OrderRepository orderRepository;
+	
 	@GetMapping
-	public ResponseEntity<List<Order>> findAll(){
-		List<Order> list = service.findAll();
-		return ResponseEntity.ok().body(list);
+	public List<Order> findAll(){
+		return orderRepository.findAll();
 	}
 	
-	@GetMapping(value = "/{id}")
+	@GetMapping("/{id}")
 	public ResponseEntity<Order> findById(@PathVariable Long id) {
-		Order obj = service.findById(id);
-		return ResponseEntity.ok().body(obj);
+		return orderRepository.findById(id)
+				.map(ResponseEntity::ok)
+				.orElse(ResponseEntity.notFound().build());
 	}
 }

@@ -10,24 +10,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.educandoweb.course.entities.Category;
+import com.educandoweb.course.repositories.CategoryRepository;
 import com.educandoweb.course.services.CategoryService;
 
 @RestController
-@RequestMapping(value = "/categories")
+@RequestMapping("/categories")
 public class CategoryResource {
 
 	@Autowired
 	private CategoryService service;
 	
+	@Autowired
+	private CategoryRepository categoryRepository;
+	
 	@GetMapping
-	public ResponseEntity<List<Category>> findAll(){
-		List<Category> list = service.findAll();
-		return ResponseEntity.ok().body(list);
+	public List<Category> findAll(){
+		return categoryRepository.findAll();
 	}
 	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Category> findById(@PathVariable Long id) {
-		Category obj = service.findById(id);
-		return ResponseEntity.ok().body(obj);
+		return categoryRepository.findById(id)
+				.map(ResponseEntity::ok)
+				.orElse(ResponseEntity.notFound().build());
 	}
 }
